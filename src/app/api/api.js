@@ -7,11 +7,12 @@ export const signUpUser = (data)=>{
         if(res.status){
             localStorage.setItem("user",JSON.stringify(res.data))
             localStorage.setItem("user",res.token)
+            toast.success("user register successfully")
         }
         return res
     })
     .catch((err)=>{
-        toast('Something went wrong')
+        toast.error('Something went wrong')
         console.log(err)
     })
     return apiCall
@@ -23,11 +24,12 @@ export const loginUser = (data) =>{
         if(res.status){
              localStorage.setItem("user",JSON.stringify(res?.data))
              localStorage.setItem("token",res.token)
+             toast.success("user login successfully")
         }
         return res
     })
     .catch((err)=>{
-        toast("Login not processed")
+        toast.error("Login not processed")
     })
 
     return apiCall
