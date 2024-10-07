@@ -1,3 +1,5 @@
+
+
 import { Inter, Oswald, Roboto } from "next/font/google";
 import "./globals.css";
 import ComputerNavbar from "@/components/ComputerNavbar";
