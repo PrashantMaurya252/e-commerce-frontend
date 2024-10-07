@@ -1,8 +1,9 @@
 import { toast } from "react-toastify"
+import apiManager from "./index"
 
 
 export const signUpUser = (data)=>{
-    const apiCall = apiManager("POST","users/register",data)
+    const apiCall = apiManager("POST","/users/register",data)
     .then((res)=>{
         if(res.status){
             localStorage.setItem("user",JSON.stringify(res.data))

@@ -1,5 +1,3 @@
-
-
 import { Inter, Oswald, Roboto } from "next/font/google";
 import "./globals.css";
 import ComputerNavbar from "@/components/ComputerNavbar";
@@ -9,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Context from "./(app)/context/context";
 import { Provider } from "react-redux";
 import store from "@/lib/store";
+import StoreProvider from "./StoreProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -65,11 +64,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Provider store={store}>
+        <StoreProvider>
           <ComputerNavbar items={navBarItems} />
           <ToastContainer />
           {children}
-        </Provider>
+        </StoreProvider>
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+const { BASE_URL } = require("../Config/config")
 
 
 
@@ -6,7 +7,7 @@ async function apiManager(method,path,data,addHeaders,contentType){
         method:method,
         headers:{
             'Content-Type': contentType ? contentType :'application/json',
-            authorization:AUTH_TOKEN,
+            // authorization:AUTH_TOKEN,
             accesstoken:localStorage.getItem('token')
         },
         body: contentType === 'multipart/form-data' ? data : JSON.stringify(data)
@@ -32,3 +33,5 @@ async function apiManager(method,path,data,addHeaders,contentType){
     })
     
 }
+
+export default apiManager
