@@ -20,7 +20,7 @@ export const signUpUser = (data)=>{
 }
 
 export const loginUser = (data) =>{
-    const apiCall = apiManager("POST",'users/login',data)
+    const apiCall = apiManager("POST",'/users/login',data)
     .then((res)=>{
         if(res.status){
              localStorage.setItem("user",JSON.stringify(res?.data))

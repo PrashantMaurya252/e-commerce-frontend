@@ -10,11 +10,13 @@ import { mainContext } from "../../context/context";
 import { toast } from "react-toastify";
 import { Input } from "@/components/ui/input";
 import { Icon } from "@iconify/react";
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
   const [loading, setLoading] = useState(false);
   // const { setUser, token, setToken } = useContext(mainContext);
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter()
 
   const schema = Yup.object().shape({
     username: Yup.string().required().label("Username"),
@@ -268,7 +270,7 @@ const Signup = () => {
               </div>
 
               <div className="flex justify-between items-center gap-3 w-full">
-                <span className="cursor-pointer text-[var(--primary1)] font-semibold">
+                <span className="cursor-pointer text-[var(--primary1)] font-semibold" onClick={()=>router.push('/auth/login')}>
                   Already have an account ?
                 </span>
                 <div className="flex gap-3">
