@@ -9,7 +9,6 @@ export default function Home() {
   console.log(user,"user")
   return (
     <div>
-      <span className="icon-[iconamoon--menu-kebab-horizontal-bold] w-[20px] h-[20px]"></span>
-      Home</div>
+      <span className="icon-[iconamoon--menu-kebab-horizontal-bold] w-[20px] h-[20px]"></span>Home</div>
   );
 }

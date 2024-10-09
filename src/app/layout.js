@@ -60,6 +60,19 @@ export default function RootLayout({ children }) {
         />
       ),
     },
+    {
+      id: 4,
+      label: "Settings",
+      path: "/settings",
+      icon: (
+        <Icon
+          icon="uiw:setting"
+          width="1.2em"
+          height="1.2em"
+          style={{ color: "gray" }}
+        />
+      ),
+    },
   ];
   return (
     <html lang="en">

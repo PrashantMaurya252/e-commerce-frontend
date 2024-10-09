@@ -10,7 +10,7 @@ const ComputerNavbar = ({ items }) => {
   const router = useRouter();
   return (
     <div className="w-full h-[100px] flex justify-between items-center px-[20px] bg-[var(--primary2)]">
-      <div className="w-[10%]">
+      <div className="w-[20%]">
         <h1
           className={`${laila.className} text-white  text-2xl cursor-pointer`}
         >
@@ -26,7 +26,7 @@ const ComputerNavbar = ({ items }) => {
           />
         </div>
       </div>
-      <div className="flex justify-around items-center text-white gap-3 w-[20%]">
+      <div className="flex justify-end items-center text-white gap-3 w-[20%]">
         {items.map((item, index) => (
           <span
             key={item.id}
@@ -37,9 +37,9 @@ const ComputerNavbar = ({ items }) => {
           </span>
         ))}
       </div>
-      <div className="w-[30%] flex justify-end items-center gap-[10px]">
+      <div className="w-[15%] flex justify-end items-center gap-[10px]">
         <div
-          className="w-[15%] bg-white text-[var(--primary1)] flex justify-center items-center py-[2px] rounded-sm"
+          className="w-[50%] bg-white text-[var(--primary1)] flex justify-center items-center py-[2px] rounded-sm"
           onClick={() => router.push("/auth/login")}
         >
           <button

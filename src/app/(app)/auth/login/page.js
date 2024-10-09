@@ -45,10 +45,11 @@ const Login = () => {
     setLoading(true);
     loginUser({ ...data })
       .then((res) => {
-        if (res.status) {
+        if (res) {
+          
           // setToken(res?.data.token);
           // setUser(res?.data);
-          const userInfo = res?.data
+          const userInfo = res?.data?.user
           dispatch(login(userInfo))
           router.push('/')
         } else {
@@ -58,8 +59,8 @@ const Login = () => {
       .catch((err) => {
         toast.error(err.message);
         console.log(err.message);
-      });
-    setLoading(false);
+      })
+     .finally(()=> setLoading(false))
   };
 
   return (
