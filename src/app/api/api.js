@@ -72,4 +72,48 @@ export const logoutUser = () => {
     .catch((err) => {
       console.log(err);
     });
+
+    return apiCall
 };
+
+export const getAllProducts = () =>{
+  const apiCall = apiManager("GET","/products/all-products")
+  .then((res)=>{
+    console.log(res,"response status 123")
+    if(res.status){
+      
+      console.log("All products api called")
+    }
+    return res
+  }).catch((err)=>{
+    console.log(err,"error")
+  })
+
+  return apiCall
+}
+
+export const markFavourite=(id) =>{
+  const apiCall = apiManager("POST",`/products/mark-favourite/${id}`)
+  .then((res)=>{
+    if(res.status){
+      console.log(`${id} this id mark favourite`)
+    }
+    return res
+  }).catch((err)=>{
+    console.log(err,"error")
+  })
+  return apiCall
+}
+
+export const unmarkFavourite=(id) =>{
+  const apiCall = apiManager("POST",`/products/unmark-favourite/${id}`)
+  .then((res)=>{
+    if(res.status){
+      console.log(`${id} this id unmark favourite`)
+    }
+    return res
+  }).catch((err)=>{
+    console.log(err,"error")
+  })
+  return apiCall
+}

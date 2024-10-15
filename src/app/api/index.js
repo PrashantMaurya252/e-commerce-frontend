@@ -7,7 +7,7 @@ async function apiManager(method,path,data,addHeaders,contentType){
         method:method,
         headers:{
             'Content-Type': contentType ? contentType :'application/json',
-            // authorization:AUTH_TOKEN,
+            authorization:`Bearer ${localStorage.getItem('token')}`,
             accesstoken:localStorage.getItem('token')
         },
         body: contentType === 'multipart/form-data' ? data : JSON.stringify(data)
